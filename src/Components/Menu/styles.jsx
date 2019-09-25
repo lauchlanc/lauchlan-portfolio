@@ -16,7 +16,7 @@ export const MenuContainer = styled(animated.aside)`
 
   ${mq[1]} {
     flex-direction: row;
-    width: 33%;
+    width: 75%;
   }
 `;
 

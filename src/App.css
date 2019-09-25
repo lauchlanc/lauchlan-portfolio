@@ -5,6 +5,12 @@
   align-items: center;
 }
 
+.App > button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
 .App-logo {
   height: 15vmin;
   animation: rotating 3s linear infinite;

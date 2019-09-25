@@ -22,20 +22,14 @@ const defaultProps = {
 };
 
 const Menu = props => {
-  const { defaultOpen } = props;
-  const isMobile = useWindowSize().width < 768;
-  const [isOpen, setOpen] = useState(defaultOpen);
+  const { menuOpen } = props;
   const [containerProps, setContainerProps] = useSpring(() => ({
-    transform: `translate3d(${
-      isMobile ? `0,${isOpen ? "0" : "-90%"}` : `${isOpen ? "0" : "-80%"},0`
-    },0)`
+    transform: `translate3d(${menuOpen ? "0" : "-100%"},0,0)`
   }));
 
   // Update spring with new props
   setContainerProps({
-    transform: `translate3d(${
-      isMobile ? `0,${isOpen ? "0" : "-90%"}` : `${isOpen ? "0" : "-80%"},0`
-    },0)`
+    transform: `translate3d(${menuOpen ? "0" : "-100%"},0,0)`
   });
 
   return (
@@ -61,15 +55,6 @@ const Menu = props => {
           </section>
         </MenuFooter>
       </MenuContent>
-      <MenuControls>
-        <button
-          type="button"
-          className="nes-btn"
-          onClick={() => setOpen(!isOpen)}
-        >
-          {isOpen ? "<" : ">"}
-        </button>
-      </MenuControls>
     </MenuContainer>
   );
 };
